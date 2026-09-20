@@ -4,6 +4,115 @@
 
 ---
 
+## 📑 Table of Contents
+
+- [Core Project & Architecture Questions (Q1–Q21)](#-example-of-the-level-of-questions-i-want-to-prepare-you-for)
+  - [Q1. Explain your project in 60 seconds](#q1-explain-your-project-in-60-seconds)
+  - [Q2. Why did you build this project?](#q2-why-did-you-build-this-project)
+  - [Q3. Why did you choose Supabase?](#q3-why-did-you-choose-supabase)
+  - [Q4. Why did you implement authentication?](#q4-why-did-you-implement-authentication)
+  - [Q5. Why didn't you put the Gemini API key in the React frontend?](#q5-why-didnt-you-put-the-gemini-api-key-in-the-react-frontend)
+  - [Q6. Why did you use an Edge Function?](#q6-why-did-you-use-an-edge-function)
+  - [Q7. Explain your complete AI request flow](#q7-explain-your-complete-ai-request-flow)
+  - [Q8. Why are content and generated_document separate?](#q8-why-are-content-and-generated_document-separate)
+  - [Q9. What is RLS and why did you use it?](#q9-what-is-rls-and-why-did-you-use-it)
+  - [Q10. What happens if someone manually changes an application ID in the URL?](#q10-what-happens-if-someone-manually-changes-an-application-id-in-the-url)
+  - [Q11. Why did you use React Hook Form?](#q11-why-did-you-use-react-hook-form)
+  - [Q12. Why Zod?](#q12-why-zod)
+  - [Q13. Why do you save the application before generating the AI document?](#q13-why-do-you-save-the-application-before-generating-the-ai-document)
+  - [Q14. What happened when you encountered Gemini API limitations?](#q14-what-happened-when-you-encountered-gemini-api-limitations)
+  - [Q15. What happens if Gemini fails?](#q15-what-happens-if-gemini-fails)
+  - [Q16. Why React instead of another frontend framework?](#q16-why-react-instead-of-another-frontend-framework)
+  - [Q17. Why JavaScript instead of TypeScript?](#q17-why-javascript-instead-of-typescript)
+  - [Q18. What was the most difficult part of the project?](#q18-what-was-the-most-difficult-part-of-the-project)
+  - [Q19. What was one bug you encountered?](#q19-what-was-one-bug-you-encountered)
+  - [Q20. How would you improve this project in the future?](#q20-how-would-you-improve-this-project-in-the-future)
+  - [Q21. What happens if Gemini returns an error?](#q21-what-happens-if-gemini-returns-an-error)
+- [React Questions (Q22–Q27)](#-react-questions)
+  - [Q22. How is your React application structured?](#q22-how-is-your-react-application-structured)
+  - [Q23. What is the difference between a component and a page in your project?](#q23-what-is-the-difference-between-a-component-and-a-page-in-your-project)
+  - [Q24. Why did you use React Router?](#q24-why-did-you-use-react-router)
+  - [Q25. How does your Edit Application route work?](#q25-how-does-your-edit-application-route-work)
+  - [Q26. How do you protect your routes?](#q26-how-do-you-protect-your-routes)
+  - [Q27. Why isn't frontend route protection enough?](#q27-why-isnt-frontend-route-protection-enough)
+- [JavaScript Questions (Q28–Q31)](#-javascript-questions)
+  - [Q28. Why is JavaScript important in this project?](#q28-why-is-javascript-important-in-this-project)
+  - [Q29. Where do you use asynchronous JavaScript?](#q29-where-do-you-use-asynchronous-javascript)
+  - [Q30. Why do you use async/await?](#q30-why-do-you-use-asyncawait)
+  - [Q31. What is the difference between authentication and authorization?](#q31-what-is-the-difference-between-authentication-and-authorization)
+- [Supabase Questions (Q32–Q36)](#-supabase-questions)
+  - [Q32. What is Supabase?](#q32-what-is-supabase)
+  - [Q33. Why PostgreSQL?](#q33-why-postgresql)
+  - [Q34. What is CRUD and where do you use it?](#q34-what-is-crud-and-where-do-you-use-it)
+  - [Q35. How do you associate an application with a user?](#q35-how-do-you-associate-an-application-with-a-user)
+  - [Q36. Why use RLS instead of filtering data in React?](#q36-why-use-rls-instead-of-filtering-data-in-react)
+- [Database Design Questions (Q37–Q40)](#-database-design-questions)
+  - [Q37. Why is content stored as structured data?](#q37-why-is-content-stored-as-structured-data)
+  - [Q38. Why is generated_document plain text?](#q38-why-is-generated_document-plain-text)
+  - [Q39. What happens when a user edits an application?](#q39-what-happens-when-a-user-edits-an-application)
+  - [Q40. What happens when the user deletes an application?](#q40-what-happens-when-the-user-deletes-an-application)
+- [Gemini / AI Questions (Q41–Q45)](#-gemini--ai-questions)
+  - [Q41. Why Gemini?](#q41-why-gemini)
+  - [Q42. What information do you send to Gemini?](#q42-what-information-do-you-send-to-gemini)
+  - [Q43. Why shouldn't you trust AI-generated content blindly?](#q43-why-shouldnt-you-trust-ai-generated-content-blindly)
+  - [Q44. What happens if the user provides incorrect information?](#q44-what-happens-if-the-user-provides-incorrect-information)
+  - [Q45. How would you control AI costs if the application became popular?](#q45-how-would-you-control-ai-costs-if-the-application-became-popular)
+- [Edge Function Questions (Q46–Q49)](#-edge-function-questions)
+  - [Q46. What is a Supabase Edge Function?](#q46-what-is-a-supabase-edge-function)
+  - [Q47. Why does your Edge Function validate the JWT?](#q47-why-does-your-edge-function-validate-the-jwt)
+  - [Q48. What happens if the Authorization header is missing?](#q48-what-happens-if-the-authorization-header-is-missing)
+  - [Q49. Why can't the Supabase publishable key authenticate the user?](#q49-why-cant-the-supabase-publishable-key-authenticate-the-user)
+- [Security Questions (Q50–Q52)](#-security-questions)
+  - [Q50. Is your Supabase publishable key a secret?](#q50-is-your-supabase-publishable-key-a-secret)
+  - [Q51. What is the biggest security mistake you wanted to avoid?](#q51-what-is-the-biggest-security-mistake-you-wanted-to-avoid)
+  - [Q52. Is your application completely secure?](#q52-is-your-application-completely-secure)
+- [Error Handling Questions (Q53–Q55)](#-error-handling-questions)
+  - [Q53. How do you handle errors in the application?](#q53-how-do-you-handle-errors-in-the-application)
+  - [Q54. What if the database succeeds but Gemini fails?](#q54-what-if-the-database-succeeds-but-gemini-fails)
+  - [Q55. What if Gemini succeeds but saving the generated document fails?](#q55-what-if-gemini-succeeds-but-saving-the-generated-document-fails)
+- [Deployment Questions (Q56–Q59)](#-deployment-questions)
+  - [Q56. How did you deploy the project?](#q56-how-did-you-deploy-the-project)
+  - [Q57. What environment variables does the frontend need?](#q57-what-environment-variables-does-the-frontend-need)
+  - [Q58. Why does the frontend use VITE_ variables?](#q58-why-does-the-frontend-use-vite_-variables)
+  - [Q59. What is the difference between development and production?](#q59-what-is-the-difference-between-development-and-production)
+- [Testing Questions (Q60–Q61)](#-testing-questions)
+  - [Q60. How did you test the project?](#q60-how-did-you-test-the-project)
+  - [Q61. Why did you test with another account?](#q61-why-did-you-test-with-another-account)
+- [Project Decision Questions (Q62–Q64)](#-project-decision-questions)
+  - [Q62. Why didn't you build a traditional Express backend?](#q62-why-didnt-you-build-a-traditional-express-backend)
+  - [Q63. Why didn't you use Firebase?](#q63-why-didnt-you-use-firebase)
+  - [Q64. Why didn't you use a custom Node.js backend?](#q64-why-didnt-you-use-a-custom-nodejs-backend)
+- [Scenario-Based Questions (Q65–Q70)](#-scenario-based-questions)
+  - [Q65. What if a user tries to access another user's application?](#q65-what-if-a-user-tries-to-access-another-users-application)
+  - [Q66. What if the user's JWT expires while generating a document?](#q66-what-if-the-users-jwt-expires-while-generating-a-document)
+  - [Q67. What if Gemini is temporarily unavailable?](#q67-what-if-gemini-is-temporarily-unavailable)
+  - [Q68. What if thousands of users start generating documents simultaneously?](#q68-what-if-thousands-of-users-start-generating-documents-simultaneously)
+  - [Q69. What if someone discovers your Edge Function URL?](#q69-what-if-someone-discovers-your-edge-function-url)
+  - [Q70. What if someone discovers your Gemini API key?](#q70-what-if-someone-discovers-your-gemini-api-key)
+- [Performance Questions (Q71–Q72)](#-performance-questions)
+  - [Q71. Your Vite build showed a large JavaScript bundle. How would you improve it?](#q71-your-vite-build-showed-a-large-javascript-bundle-how-would-you-improve-it)
+  - [Q72. How would you improve the application if it became slow?](#q72-how-would-you-improve-the-application-if-it-became-slow)
+- [Project Ownership Questions (Q73–Q76)](#-project-ownership-questions)
+  - [Q73. Which parts of this project did you personally build?](#q73-which-parts-of-this-project-did-you-personally-build)
+  - [Q74. Did you use AI to build this project?](#q74-did-you-use-ai-to-build-this-project)
+  - [Q75. What did you personally learn from this project?](#q75-what-did-you-personally-learn-from-this-project)
+  - [Q76. If you had to rebuild this project, what would you do differently?](#q76-if-you-had-to-rebuild-this-project-what-would-you-do-differently)
+- [Final 10 Deep Understanding Questions (Q77–Q86)](#-final-10-deep-understanding-questions)
+  - [Q77. Draw the complete architecture of AI WriteAssist](#q77-draw-the-complete-architecture-of-ai-writeassist)
+  - [Q78. Explain exactly what happens from clicking "Generate Document" until the generated document appears on screen](#q78-explain-exactly-what-happens-from-clicking-generate-document-until-the-generated-document-appears-on-screen)
+  - [Q79. Where is the Gemini API key stored and why can't it be stored in the React frontend?](#q79-where-is-the-gemini-api-key-stored-and-why-cant-it-be-stored-in-the-react-frontend)
+  - [Q80. How does the Edge Function know which user is making the request?](#q80-how-does-the-edge-function-know-which-user-is-making-the-request)
+  - [Q81. How does RLS prevent User A from accessing User B's applications?](#q81-how-does-rls-prevent-user-a-from-accessing-user-bs-applications)
+  - [Q82. Why are content and generated_document separate?](#q82-why-are-content-and-generated_document-separate)
+  - [Q83. What happens if the AI request fails after the application has been saved?](#q83what-happens-if-the-ai-request-fails-after-the-application-has-been-saved)
+  - [Q84. What happens if the database update fails after Gemini returns successfully?](#q84what-happens-if-the-database-update-fails-after-gemini-returns-successfully)
+  - [Q85. What would you change if 10,000 users started using the application?](#q85what-would-you-change-if-10000-users-started-using-the-application)
+  - [Q86. What is one architectural decision you made in this project and why?](#q86what-is-one-architectural-decision-you-made-in-this-project-and-why)
+- [Rapid-Fire Questions](#-rapid-fire-questions)
+- [Core Chains & Security Principles](#10-core-chains)
+
+---
+
 ## 🔥 Example of the level of questions I want to prepare you for
 
 ### Q1. Explain your project in 60 seconds
@@ -170,7 +279,7 @@ It also made me think more carefully about error handling and external-service d
 
 ### Q15. What happens if Gemini fails?
 
-- equest failure
+- Request failure
 - authentication failure
 - API errors
 - transient errors
@@ -512,7 +621,7 @@ Delete
 
 ### Q48. What happens if the Authorization header is missing?
 
-T- he Edge Function rejects the request rather than continuing to Gemini.
+- The Edge Function rejects the request rather than continuing to Gemini.
 
 - The function expects an authenticated bearer token before processing the AI generation request.
 
@@ -534,7 +643,7 @@ Authorization: Bearer <JWT>
 
 ### Q50. Is your Supabase publishable key a secret?
 
-- t should not be treated like the Gemini API secret.
+- It should not be treated like the Gemini API secret.
 
 - The publishable key is intended for client-side Supabase usage, while private credentials such as the Gemini API key must remain server-side.
 
@@ -655,3 +764,594 @@ VITE_SUPABASE_PUBLISHABLE_KEY
 - Because user-specific data protection is an important part of the application.
 
 - Testing with another account helps verify that authentication and RLS behave according to the intended ownership model rather than only testing everything with the original account.
+
+## 🔵 Project Decision Questions
+
+### Q62. Why didn't you build a traditional Express backend?
+
+- For this project, Supabase Edge Functions provided the server-side capability I needed without requiring me to build and maintain a separate Express server.
+
+- It also integrated naturally with the Supabase authentication and database services I was already using.
+
+- A traditional backend such as Express would also be a valid architecture, especially if the backend requirements became more complex.
+
+### Q63. Why didn't you use Firebase?
+
+- My learning goal for this project included gaining practical experience with Supabase and PostgreSQL.
+
+- Supabase provided authentication, relational database capabilities, RLS and Edge Functions in one ecosystem, which matched the requirements of this project.
+
+### Q64. Why didn't you use a custom Node.js backend?
+
+- I wanted to learn how managed backend services and serverless functions can solve real application requirements.
+
+- Using Supabase allowed me to focus on the application's architecture and security while still working with PostgreSQL and server-side functions.
+
+## 🔥 Scenario-Based Questions
+
+- These are particularly important because interviewers often move from "What did you build?" to "What would happen if...?"
+
+### Q65. What if a user tries to access another user's application?
+
+- The application should not rely only on frontend checks. Supabase RLS should prevent unauthorized access to the database record.
+
+### Q66. What if the user's JWT expires while generating a document?
+
+- The authenticated request can fail because the token is no longer valid. The Edge Function should reject the request rather than allowing unauthenticated AI generation. The frontend can then handle the authentication failure appropriately.
+
+### Q67. What if Gemini is temporarily unavailable?
+
+- The AI generation request can fail, but the application data has already been saved. Therefore, the user doesn't lose the completed application and can retry generation.
+
+### Q68. What if thousands of users start generating documents simultaneously?
+
+- The current MVP would need additional controls before assuming that level of scale.
+
+- I would consider rate limiting, per-user quotas, usage tracking, monitoring, database optimization and appropriate AI service capacity.
+
+### Q69. What if someone discovers your Edge Function URL?
+
+- Knowing the endpoint URL alone should not be enough to generate documents because the function validates the user's authentication token before processing the request.
+
+### Q70. What if someone discovers your Gemini API key?
+
+- That would be a security incident. The key should be revoked or rotated immediately, and its exposure should be investigated.
+
+- This is why private credentials should never be committed to GitHub or bundled into the frontend.
+
+## 🔵 Performance Questions
+
+### Q71. Your Vite build showed a large JavaScript bundle. How would you improve it?
+
+- I would first analyze the bundle to identify the largest dependencies and modules.
+
+- Then I could consider:
+
+- Route-based code splitting
+- Lazy loading
+- Dynamic imports
+- Removing unnecessary dependencies
+- Optimizing large libraries
+- Better chunking strategy
+
+- This is an area I would address as the application grows.
+
+### Q72. How would you improve the application if it became slow?
+
+- I would first measure rather than immediately optimize.
+
+- I would investigate:
+
+- Browser performance
+- Network requests
+- Database queries
+- Bundle size
+- Rendering behavior
+- AI request latency
+
+- Then optimize the actual bottleneck.
+
+## 🧠 Project Ownership Questions
+
+### Q73. Which parts of this project did you personally build?
+
+- Be prepared to answer this very clearly.
+
+- You should explain honestly which parts you implemented yourself, which parts were assisted by AI tools, and which parts you reviewed.
+
+- A strong answer is:
+
+- I used AI tools as development assistance in some areas, but I remained responsible for understanding the architecture, reviewing the generated code, integrating the pieces, debugging issues, testing the application and making the final implementation decisions.
+
+### Q74. Did you use AI to build this project?
+
+- Yes, I used AI tools as development assistance where appropriate. However, I did not treat generated code as something to blindly copy.
+
+- I reviewed the implementation, understood the logic, integrated it into the project, tested it, and debugged issues when the implementation didn't behave as expected.
+
+- One of my main goals with this project was actually to understand the architecture and decisions rather than simply produce code.
+
+### Q75. What did you personally learn from this project?
+
+- I learned that building a complete application is much more than writing React components.
+
+- I learned how authentication, authorization, database design, RLS, server-side functions, external APIs, error handling and deployment fit together.
+
+- The Gemini integration particularly helped me understand the difference between client-side and server-side responsibilities.
+
+- Most importantly, I gained experience taking an idea from a guided workflow to a deployed full-stack application.
+
+### Q76. If you had to rebuild this project, what would you do differently?
+
+- I would plan the data model and AI integration boundary earlier.
+
+- I would also think about rate limiting and usage tracking earlier because AI generation is an external resource with quota and cost considerations.
+
+- I would consider performance optimization and dedicated PDF generation as later improvements.
+
+- At the same time, I would keep the separation between structured form data and generated document data because that proved useful during development.
+
+## 🏆 Final 10 "Deep Understanding" Questions
+
+### Q77. Draw the complete architecture of AI WriteAssist.
+
+- The overall architecture of my application is:
+
+```text
+                    ┌──────────────────────┐
+                    │       User           │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ React + Vite         │
+                    │ Frontend             │
+                    │                      │
+                    │ React Router         │
+                    │ React Hook Form      │
+                    │ Zod                  │
+                    │ Redux Toolkit        │
+                    └──────────┬───────────┘
+                               │
+                 Authentication / Data Requests
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Supabase             │
+                    │                      │
+                    │ Authentication      │
+                    │ PostgreSQL           │
+                    │ Row Level Security   │
+                    └──────────┬───────────┘
+                               │
+                    Generate Document
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Supabase Edge        │
+                    │ Function             │
+                    │ generate-document    │
+                    │                      │
+                    │ Validate JWT         │
+                    │ Read Gemini Secret   │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Gemini AI            │
+                    │                      │
+                    │ Generate Document    │
+                    └──────────┬───────────┘
+                               │
+                         Generated Text
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Supabase Database    │
+                    │                      │
+                    │ generated_document   │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ React UI             │
+                    │ Edit / Save / Print  │
+                    └──────────────────────┘
+```
+
+- The important point is that Gemini is not called directly from the React frontend. The request goes through the authenticated Supabase Edge Function.
+
+### Q78. Explain exactly what happens from clicking "Generate Document" until the generated document appears on screen.
+
+- When the user clicks Generate Document, the flow is:
+
+1.The form data has already been validated and the application has been saved.
+
+2.The frontend calls my generateDocument() logic.
+
+3.The React application sends a request to the generate-document Supabase Edge Function.
+
+4.The authenticated user's access token is sent in the Authorization: Bearer <JWT> header.
+
+5.The Edge Function extracts the bearer token.
+
+6.It validates the user using Supabase Auth.
+
+7.If authentication succeeds, the function retrieves the Gemini API key from Supabase secrets.
+
+8.The function constructs the AI prompt using the application information, language, tone, and other required data.
+
+9.It sends the request to Gemini.
+
+10.Gemini returns the generated document.
+
+11.The Edge Function sends the generated document back to React.
+
+12.React updates the generatedDocument state.
+
+13.The generated document appears in the UI.
+
+14.The document is also saved into the generated_document column of the application.
+
+- So the important chain is:
+
+```text
+Generate button
+      ↓
+React
+      ↓
+Authenticated Edge Function
+      ↓
+Validate JWT
+      ↓
+Gemini
+      ↓
+Generated document
+      ↓
+React state
+      ↓
+UI
+      ↓
+Supabase database
+```
+
+### Q79. Where is the Gemini API key stored and why can't it be stored in the React frontend?
+
+- The Gemini API key is stored as a Supabase Edge Function secret:
+
+```js
+GEMINI_API_KEY
+```
+
+- can be bundled into the frontend JavaScript and ultimately exposed to users.
+
+- Therefore:
+
+```js
+❌ React → Gemini
+```
+
+- would expose the API key.
+
+- Instead I use:
+
+```text
+React
+   ↓
+Authenticated Edge Function
+   ↓
+Gemini API
+```
+
+### Q80. How does the Edge Function know which user is making the request?
+
+- The frontend sends the logged-in user's access token in the Authorization header:
+
+```js
+Authorization: Bearer <JWT>
+```
+
+- The Edge Function extracts the token and uses Supabase Auth to validate it.
+
+- Conceptually:
+
+```text
+React
+  ↓
+Bearer JWT
+  ↓
+Edge Function
+  ↓
+Supabase Auth
+  ↓
+Identify authenticated user
+```
+
+- The important distinction is that the frontend doesn't simply tell the Edge Function:
+
+```js
+userId = 123
+```
+
+- and expect the server to trust it.
+
+- The server validates the authentication token and obtains the authenticated user's identity from Supabase Auth.
+
+### Q81. How does RLS prevent User A from accessing User B's applications?
+
+- RLS means Row Level Security.
+
+- I use it so that database access is controlled according to the authenticated user.
+
+- Conceptually, each application belongs to a user through its user_id
+
+- For example:
+
+```text
+Application 1 → User A
+Application 2 → User B
+```
+
+- When User A makes a database request, Supabase knows the authenticated user through the authentication context.
+
+- The RLS policy checks whether the application's user_id matches the current authenticated user.
+
+- Therefore:
+
+```text
+User A → User A's applications ✅
+User A → User B's applications ❌
+```
+
+- This is important because I don't rely only on filtering data in React.
+
+- For example, simply doing:
+
+```js
+applications.filter(app => app.user_id === user.id)
+```
+
+- would not be sufficient security because the database itself would still need to enforce ownership.
+
+- RLS provides the database-level protection.
+
+### Q82. Why are content and generated_document separate?
+
+- This was an important architectural decision and also fixed an actual bug I encountered.
+
+- content stores the original structured application/form data.
+
+- For example:
+
+```text
+category
+document type
+language
+tone
+user-entered fields
+```
+
+- generated_document stores the AI-generated or manually edited document.
+
+- So conceptually:
+
+```text
+content
+   ↓
+Input / source data
+
+generated_document
+   ↓
+Final generated/editable document
+```
+
+- Initially, I had a problem where generated plain text was being saved into content.
+
+- Later, when the Edit Application page tried to parse content as JSON, it caused an error because content was no longer JSON.
+
+- I fixed the architecture by keeping them separate:
+
+```text
+applications
+├── content
+└── generated_document
+```
+
+- This keeps the original structured data independent from the generated document.
+
+### Q83.What happens if the AI request fails after the application has been saved?
+
+- The application is saved before the AI generation step.
+
+- So if Gemini fails:
+
+```text
+Save Application
+       ↓
+Success
+       ↓
+Call Gemini
+       ↓
+Gemini fails
+```
+
+- The application itself is not lost.
+
+- The user can still access the saved application from the dashboard and try the generation process again.
+
+- My Edge Function also handles certain temporary Gemini failures with retry/fallback logic.
+
+- The important design decision is:
+
+- I don't make the user's form data dependent on successful AI generation.
+
+### Q84.What happens if the database update fails after Gemini returns successfully?
+
+- There are two separate operations:
+
+```text
+Gemini
+  ↓
+Generated document returned
+  ↓
+Update database
+```
+
+- If Gemini succeeds but the database update fails, the generated document may already exist in the frontend state, but it hasn't been successfully persisted to the database.
+
+- The application should therefore treat the database update as a separate persistence step and handle the error rather than pretending that the document was successfully saved.
+
+- The important distinction is:
+
+```text
+AI generation success ≠ database persistence success
+```
+
+- A production version could improve this further by adding stronger retry/error recovery and clearer save status to the user.
+
+### Q85.What would you change if 10,000 users started using the application?
+
+- I would first identify the bottlenecks rather than immediately changing the architecture.
+
+- The areas I would examine are:
+
+### 1. AI usage and cost
+
+- I would introduce controls such as:
+
+- rate limiting
+- per-user quotas
+- usage tracking
+- request throttling
+- possibly caching where appropriate
+
+### 2. Database
+
+- I would review:
+
+- indexes
+- query performance
+- database connections
+- frequently accessed queries
+- RLS policy performance
+
+### 3. Edge Functions
+
+- I would monitor:
+
+- execution time
+- concurrent requests
+- failures
+- Gemini API response time
+- 429/5xx errors
+
+### 4. Frontend performance
+
+- My current production build already showed a Vite warning about a large JavaScript chunk, so I would investigate:
+
+- code splitting
+- lazy loading routes
+- reducing unnecessary dependencies
+- bundle analysis
+
+### 5. Monitoring
+
+- I would introduce proper observability:
+
+```text
+Frontend
+   ↓
+Error monitoring
+
+Edge Function
+   ↓
+Logs + metrics
+
+Database
+   ↓
+Query monitoring
+
+Gemini
+   ↓
+Usage + failure monitoring
+```
+
+- So I wouldn't simply say "I would move everything to another backend." I would first measure where the actual bottleneck is.
+
+### Q86.What is one architectural decision you made in this project and why?
+
+- One of my most important architectural decisions was to put Gemini behind a Supabase Edge Function instead of calling Gemini directly from React.
+
+- The reason was security.
+
+- The frontend is publicly accessible, so putting the Gemini API key inside the React application would expose the key.
+
+- Instead:
+
+```text
+React
+   ↓
+Authenticated request
+   ↓
+Supabase Edge Function
+   ↓
+Gemini
+```
+
+- The Edge Function validates the authenticated user and accesses the Gemini secret server-side.
+
+- This decision also helped me understand how frontend applications, authentication, backend functions, secrets, and external AI APIs work together instead of treating AI as just another frontend API call.
+
+## ⚡ Rapid-Fire Questions
+
+| Question                         | Key point                                        |
+| -------------------------------- | ------------------------------------------------ |
+| What is React?                   | Component-based UI library                       |
+| What is Vite?                    | Frontend build/dev tooling                       |
+| What is Supabase?                | Backend platform around PostgreSQL               |
+| What is PostgreSQL?              | Relational database                              |
+| What is RLS?                     | Database-level row access policies               |
+| What is JWT?                     | Token representing authenticated identity/claims |
+| Authentication vs authorization? | Identity vs permissions                          |
+| What is CRUD?                    | Create, Read, Update, Delete                     |
+| What is Zod?                     | Schema validation                                |
+| What is React Hook Form?         | Form state/submission management                 |
+| What is an Edge Function?        | Server-side/serverless function                  |
+| Why not expose Gemini key?       | Client code is inspectable                       |
+| Why save before AI generation?   | Preserve user input if AI fails                  |
+| Why separate generated document? | Keep structured input independent                |
+| Why use JavaScript?              | Current learning focus                           |
+| Why Supabase?                    | Auth + PostgreSQL + RLS + Edge Functions         |
+| Why Gemini?                      | Generative document creation                     |
+| Why Vercel?                      | Frontend deployment                              |
+| What is RLS protecting?          | User-owned database records                      |
+
+## 10 core chains:
+
+```text
+1. User
+   ↓
+2. Authentication
+   ↓
+3. Protected Route
+   ↓
+4. Form
+   ↓
+5. Validation
+   ↓
+6. Supabase Database
+   ↓
+7. Authenticated Edge Function
+   ↓
+8. Gemini
+   ↓
+9. generated_document
+   ↓
+10. Dashboard / Edit / Print
+```
+
+## Authentication tells you who the user is.
+
+## Authorization determines what that user is allowed to access.
+
+## RLS helps enforce that authorization at the database level.
