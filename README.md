@@ -1,6 +1,52 @@
-# AI-APPLICATION-LETTER-ASSISTANT
+<p align="center">
+  <img src="./public/ICON/AI-APP-ICON.png" alt="AI WriteAssist Logo" width="100" />
+</p>
 
-## A full-stack AI-powered application and formal letter assistant built with React, Supabase, and Gemini.
+<h1 align="center">AI WriteAssist</h1>
+
+<p align="center">
+  A full-stack AI-powered application and formal letter assistant built with React, Supabase, and Gemini.
+</p>
+
+<p align="center">
+  <a href="https://ai-application-letter-assistant.vercel.app/">Live Demo</a>
+  ·
+  <a href="https://github.com/kapilsarkar/AI-APPLICATION-LETTER-ASSISTANT">GitHub Repository</a>
+</p>
+
+---
+## 📑 Table of Contents
+
+- [Project Introduction](#project-introduction)
+- [Live Demo & Repository](#-live-demo)
+- [Project Overview](#-project-overview)
+- [Key Features](#-key-features)
+  - [Authentication](#-authentication)
+  - [Guided Document Creation](#-guided-document-creation)
+  - [AI Document Generation](#-ai-document-generation)
+  - [Edit & Save](#️-edit--save)
+  - [Dashboard](#-dashboard)
+  - [Print / Save as PDF](#️-print--save-as-pdf)
+- [Complete Project Walkthrough](#️-complete-project-walkthrough)
+- [Screenshots](#-screenshots)
+- [Application Flow](#-application-flow)
+- [Architecture](#️-architecture)
+- [Security](#-security)
+- [Database Design](#️-database-design)
+- [AI Generation Workflow](#-ai-generation-workflow)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Local Development](#️-local-development)
+- [Deployment](#️-deployment)
+- [Testing](#-testing)
+- [Engineering Highlights](#-engineering-highlights)
+- [Current Scope](#-current-scope)
+- [Future Improvements](#-future-improvements)
+- [What This Project Demonstrates](#-what-this-project-demonstrates)
+- [Author](#-author)
+- [Project-Status](#-project-status)
+
+---
 
 ### Project Introduction
 
@@ -190,7 +236,7 @@ A visual walkthrough of the AI WriteAssist application.
 
 ### 🧭 Application Flow
 
-```js
+```text
 User
  │
  ▼
@@ -243,7 +289,7 @@ Dashboard
 
 ### 🏗️ Architecture
 
-```js
+```text
 ┌──────────────────────┐
                          │      User Browser     │
                          │    React + Vite App   │
@@ -290,7 +336,7 @@ Dashboard
 
 - Frontend configuration uses:
 
-```js
+```text
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
 
@@ -348,7 +394,7 @@ applications
 
 ## 🧰 Tech Stack Tech Stack
 
-## Tech Stack
+
 
 | Technology | Purpose |
 | :--- | :--- |
@@ -615,10 +661,10 @@ AI rewrite, improvement, and translation are not part of the current implementat
 
 - [GITHUB](https://github.com/kapilsarkar)
 
-- [LINKEDIN](https://github.com/kapilsarkar)
+- [LINKEDIN](https://www.linkedin.com/in/kapil-sarkar-439754249/)
 
 - [X](https://x.com/kapil_cena1)
 
-## 📄 License
+## 📄 Project Status
 
-- his project is intended as a portfolio and demonstration project.
+- This project is intended as a portfolio and demonstration project.
