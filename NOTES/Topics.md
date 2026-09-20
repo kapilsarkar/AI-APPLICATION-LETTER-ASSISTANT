@@ -104,16 +104,3 @@
         ↓
              🎉 V1 COMPLETE
 ```
-
-
-0:00 — Project introduction
-0:15 — Problem
-0:30 — Authentication
-0:50 — Application workflow
-1:30 — AI generation
-2:10 — Dashboard
-2:40 — Editing
-3:10 — Print / PDF
-3:30 — Architecture/security
-4:00 — Final 24-screen overview
-4:15 — Live Demo + GitHub
