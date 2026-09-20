@@ -9,9 +9,11 @@
 </p>
 
 <p align="center">
-  <a href="https://ai-application-letter-assistant.vercel.app/">Live Demo</a>
-  ·
-  <a href="https://github.com/kapilsarkar/AI-APPLICATION-LETTER-ASSISTANT">GitHub Repository</a>
+  <a href="https://ai-application-letter-assistant.vercel.app/">🚀 Live Demo</a>
+  &nbsp; • &nbsp;
+  <a href="https://youtu.be/ygHT6iqJGoo">🎥 Video Demo</a>
+  &nbsp; • &nbsp;
+  <a href="https://github.com/kapilsarkar/AI-APPLICATION-LETTER-ASSISTANT">💻 GitHub Repository</a>
 </p>
 
 ---
@@ -60,7 +62,7 @@ AI WriteAssist helps users create professional applications and formal letters t
 
 - Video Demo
 
-[LIVE-DEMO]()
+[LIVE-DEMO](https://youtu.be/ygHT6iqJGoo)
 
 - GitHub Repository:
 
