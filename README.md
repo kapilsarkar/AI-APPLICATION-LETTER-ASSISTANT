@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/ICON/AI-APP-ICON.png" alt="AI WriteAssist Logo" width="100" />
+  <img src="./docs//screenshots/ai-writeassis-youtubethumnail.png" alt="AI WriteAssist Logo" width="500" />
 </p>
 
 <h1 align="center">AI WriteAssist</h1>
