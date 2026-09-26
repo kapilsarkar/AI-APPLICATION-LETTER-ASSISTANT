@@ -9,8 +9,8 @@ const corsHeaders = {
 };
 
 // Helper: Call Gemini with exponential backoff for 503 / 429
-async function callGeminiWithRetry(url: string, body: object, maxRetries = 2) {
-  let delay = 1000;
+async function callGeminiWithRetry(url: string, body: object, maxRetries = 3) {
+  let delay = 2000;
 
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     const res = await fetch(url, {
@@ -21,7 +21,7 @@ async function callGeminiWithRetry(url: string, body: object, maxRetries = 2) {
 
     if (res.status === 503 || res.status === 429) {
       console.warn(
-        `Gemini ${res.status} on attempt ${attempt + 1}. Retrying in${delay}ms...`
+        `Gemini returned ${res.status} on attempt ${attempt + 1}. Retrying in${delay}ms...`
       );
       await new Promise((resolve) => setTimeout(resolve, delay));
       delay *= 2;
@@ -154,13 +154,13 @@ Structural Requirements:
 
     // 6. Execute model call with retry and fallback
     const primaryUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`;
-    let geminiRes = await callGeminiWithRetry(primaryUrl, requestPayload, 2);
+    let geminiRes = await callGeminiWithRetry(primaryUrl, requestPayload, 3);
 
     if (geminiRes.status === 429 || geminiRes.status === 503) {
       console.warn(
         `Primary model returned status ${geminiRes.status}. Falling back to alternate model...`
       );
-      const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+      const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-pro:generateContent?key=${apiKey}`;
       geminiRes = await callGeminiWithRetry(fallbackUrl, requestPayload, 2);
     }
 
