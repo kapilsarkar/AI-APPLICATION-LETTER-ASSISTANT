@@ -104,3 +104,4 @@
         ↓
              🎉 V1 COMPLETE
 ```
+npx supabase functions deploy generate-document --use-api --no-verify-jwt
