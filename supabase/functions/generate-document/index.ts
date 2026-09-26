@@ -158,9 +158,9 @@ Structural Requirements:
 
     if (geminiRes.status === 429 || geminiRes.status === 503) {
       console.warn(
-        `Primary model returned status ${geminiRes.status}. Falling back to alternate model...`
+        `Primary model returned status ${geminiRes.status}. Falling back to gemini-3.5-flash-lite...`
       );
-      const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-pro:generateContent?key=${apiKey}`;
+      const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`;
       geminiRes = await callGeminiWithRetry(fallbackUrl, requestPayload, 2);
     }
 
