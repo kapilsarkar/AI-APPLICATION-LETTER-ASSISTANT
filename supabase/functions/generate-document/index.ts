@@ -1,4 +1,3 @@
-
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
@@ -218,10 +217,14 @@ You are an expert formal letter and official application drafter.
 Draft a complete, professionally formatted document based strictly on the parameters and rules below.
 
 Parameters:
-- Category: ${category || "General"}
-- Document Type: ${documentType || "General Application"}
-- Language: ${language || "English"}
-- Tone: ${tone || "Professional"}
+- Category: 
+${category || "General"}
+- Document Type: 
+${documentType || "General Application"}
+- Language: 
+${language || "English"}
+- Tone: 
+${tone || "Professional"}
 
 Accuracy & Factual Rules:
 
@@ -257,14 +260,11 @@ ${formattedFields}`,
       ],
       generationConfig: {
         maxOutputTokens: 2048,
-        thinkingConfig: {
-          thinkingBudget: 0,
-        },
       },
     };
 
     const url =
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`;
 
     // 8. Make one Gemini API request
     console.log(
